@@ -20,8 +20,7 @@ This repository contains the implementation of **Task 2** from the AI and RPA te
 - **Amazon S3**
 - **IAM Roles**
 - **MovieLens 100K Dataset**
-- **Python / Pandas** (for preprocessing)
-- **GitHub**
+- **Python / Pandas**
 
 ---
 
