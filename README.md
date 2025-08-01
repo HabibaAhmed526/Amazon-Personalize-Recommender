@@ -1,6 +1,6 @@
-# 🎯 Amazon Personalize Recommender System – Technical Assessment
+# 🎯 Amazon Personalize Recommender System 
 
-This repository contains the implementation of **Task 2** from the AI and RPA technical assessment. The task involves building a simple recommendation system using **Amazon Personalize** with a real dataset, and generating recommendations for sample users.
+The project involves building a simple recommendation system using **Amazon Personalize** with a real dataset, and generating recommendations for sample users.
 
 ---
 
