@@ -16,9 +16,9 @@ The project involves building a simple recommendation system using **Amazon Pers
 
 ## Tools & Technologies Used
 
-- **Amazon Personalize**
+- **Amazon Personalize (Video On Demand domain)**
 - **Amazon S3**
-- **IAM Roles**
+- **IAM Roles & Policies**
 - **MovieLens 100K Dataset**
 
 ---
@@ -40,8 +40,12 @@ user_id,item_id,timestamp,event_type
 
 ## Amazon Personalize Setup
 
-1. **Created a Dataset Group**: `movie-recommender-habiba`
-2. **Created a Schema**:
+1. **Created a Dataset Group**:
+   - Name:`movie-recommender-habiba`
+   - Domain: `Video On Demand (VOD)`
+     (Choosing VOD allowed me to use Amazon's pre-optimized recommender for movie-watching behavior)
+2. **Used Built-in Schema**:
+   The VOD domain automatically provides a compatible schema:
 
 ```json
 {
@@ -66,11 +70,11 @@ user_id,item_id,timestamp,event_type
 
 ---
 
-## Model Training & Recommendations
+## Recommender Setup & Recommendations
 
-- Used the **"Top Picks for You"** recommender.
-- Training was performed using the **User-Personalization** recipe.
-- After training, I generated recommendations for multiple users from the dataset.
+- **Used Built-in Recommender**: `Top Picks for You` (automatically trained under VOD)
+- No need to manually choose a recipe or train a custom solution
+- Amazon handled training and tuning automatically based on the uploaded interactions
 
 ### Sample Output for `user_id = 102`:
 
