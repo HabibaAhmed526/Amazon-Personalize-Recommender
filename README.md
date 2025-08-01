@@ -1,34 +1,33 @@
-# 🎯 Amazon Personalize Recommender System 
+# Amazon Personalize Recommender System 
 
 The project involves building a simple recommendation system using **Amazon Personalize** with a real dataset, and generating recommendations for sample users.
 
 ---
 
-## 📌 Objective
+## Objective
 
 - Prepare and upload a dataset of user-item interactions.
 - Train a recommender model using **Amazon Personalize**.
 - Generate personalized recommendations for selected users.
 - Document all steps, decisions, and results.
-- (Bonus) Provide a deployment plan to integrate recommendations into an application.
+- Provide a deployment plan to integrate recommendations into an application.
 
 ---
 
-## 🛠 Tools & Technologies Used
+## Tools & Technologies Used
 
 - **Amazon Personalize**
 - **Amazon S3**
 - **IAM Roles**
 - **MovieLens 100K Dataset**
-- **Python / Pandas**
 
 ---
 
-## 📂 Dataset Preparation
+## Dataset Preparation
 
 - Dataset used: **MovieLens 100K**
 - I extracted a sample of **1,000 rows** from the original dataset to simplify processing and reduce training time.
-- The `u.data` file was converted into a CSV named `interactions_sample.csv`.
+- The `u.data` file was converted into a CSV named `interactions.csv`.
 - A new column `event_type` with the value `"watch"` was added to each row to comply with schema requirements.
 
 **Final CSV Columns:**
@@ -39,7 +38,7 @@ user_id,item_id,timestamp,event_type
 
 ---
 
-## 🧱 Amazon Personalize Setup
+## Amazon Personalize Setup
 
 1. **Created a Dataset Group**: `movie-recommender-habiba`
 2. **Created a Schema**:
@@ -67,13 +66,13 @@ user_id,item_id,timestamp,event_type
 
 ---
 
-## 🤖 Model Training & Recommendations
+## Model Training & Recommendations
 
 - Used the **"Top Picks for You"** recommender.
 - Training was performed using the **User-Personalization** recipe.
 - After training, I generated recommendations for multiple users from the dataset.
 
-### 🔍 Sample Output for `user_id = 102`:
+### Sample Output for `user_id = 102`:
 
 | Item ID | Score     |
 |---------|-----------|
@@ -86,7 +85,7 @@ user_id,item_id,timestamp,event_type
 
 ---
 
-## 🚀 Deployment Plan (Bonus)
+## Deployment Plan
 
 If deployed in a real-world application:
 
@@ -97,26 +96,3 @@ If deployed in a real-world application:
 - Monitor usage and performance using **CloudWatch**.
 - Secure with appropriate **IAM roles** and **policies**.
 
----
-
-## 📁 Repository Structure
-
-| File/Folder               | Description                                    |
-|---------------------------|------------------------------------------------|
-| `interactions_sample.csv` | 1,000-row sample interaction dataset           |
-| `README.md`               | Project overview and explanation               |
-| `personalize_report.md`   | Detailed implementation report (optional)      |
-| `deployment_plan.md`      | Deployment strategy for production (optional)  |
-| `screenshots/`            | Screenshots of setup and recommendations       |
-
----
-
-## 🧹 Cleanup
-
-- All Personalize resources (dataset group, schema, dataset, recommender) were **deleted** after the task to prevent charges, as per AWS guidelines.
-
----
-
-## 🙋‍♀️ Author
-
-**Habiba Ahmed**  
